@@ -4,7 +4,7 @@
 
 - Model：实体层，负责业务逻辑处理（网络数据请求、数据库读取等）
 - View：视图层，负责界面展示（Activitiy 、Fragment & View）
-- Presenter：辑控制层，持有 View & Model 的引用，解耦 View & Model
+- Presenter：逻辑控制层，持有 View & Model 的引用，解耦 View & Model
 
 MVP三者关系图：
 
