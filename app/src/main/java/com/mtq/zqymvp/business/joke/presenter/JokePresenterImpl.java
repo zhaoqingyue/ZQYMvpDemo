@@ -1,6 +1,5 @@
 package com.mtq.zqymvp.business.joke.presenter;
 
-import com.blankj.utilcode.util.LogUtils;
 import com.mtq.zqymvp.business.joke.bean.Joke;
 import com.mtq.zqymvp.business.joke.model.IJokeModel;
 import com.mtq.zqymvp.business.joke.model.JokeModelImpl;
@@ -43,12 +42,10 @@ public class JokePresenterImpl implements IJokePresenter, OnJokeListener {
     }
 
     @Override
-    public void onError() {
-        LogUtils.e("ZQY", " === onError ===");
-
+    public void onFail(String msg) {
         if (mIJokeView != null) {
             mIJokeView.hideProgress();
-            mIJokeView.onError();
+            mIJokeView.onFail(msg);
         }
     }
 }

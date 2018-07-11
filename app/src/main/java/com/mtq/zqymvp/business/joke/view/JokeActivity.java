@@ -72,6 +72,12 @@ public class JokeActivity extends BaseActivity implements IJokeView {
     }
 
     @Override
+    public void onFail(String msg) {
+        LogUtils.e("ZQY", " === 请求失败 === " + msg);
+        listView.setEmptyView(empty);
+    }
+
+    @Override
     public void onSuccess(Joke joke) {
         if (joke != null) {
             JokeResult result = joke.result;
@@ -81,11 +87,5 @@ public class JokeActivity extends BaseActivity implements IJokeView {
                 adapter.notifyDataSetChanged();
             }
         }
-    }
-
-    @Override
-    public void onError() {
-        LogUtils.e("ZQY", " === 请求失败 ===");
-        listView.setEmptyView(empty);
     }
 }

@@ -9,4 +9,6 @@ public interface IBaseView {
     void showProgress();
 
     void hideProgress();
+
+    void onFail(String msg);
 }

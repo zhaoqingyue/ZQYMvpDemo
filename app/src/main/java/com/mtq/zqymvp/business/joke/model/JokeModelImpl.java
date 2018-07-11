@@ -17,9 +17,9 @@ import retrofit2.Retrofit;
 
 public class JokeModelImpl implements IJokeModel {
 
-    public static final String JOKE_SERVER_URL ="http://api.jisuapi.com/xiaohua/";
-    public static final String SORT ="addtime";
-    public static final String APPKEY ="9814b57c706d0a23";
+    private static final String JOKE_SERVER_URL ="http://api.jisuapi.com/xiaohua/";
+    private static final String SORT ="addtime";
+    private static final String APPKEY ="9814b57c706d0a23";
 
     @Override
     public void getJokeList(String pageNum, String pageSize, final OnJokeListener listener) {
@@ -33,16 +33,15 @@ public class JokeModelImpl implements IJokeModel {
                 LogUtils.e("ZQY", " === onResponse ===");
                 if (response != null) {
                     listener.onSuccess(response.body());
-                    LogUtils.e("ZQY", response.body());
                 } else {
-                    listener.onError();
+                    listener.onFail("返回结果为空");
                 }
             }
 
             @Override
             public void onFailure(Call<Joke> call, Throwable throwable) {
                 LogUtils.e("ZQY", " === onFailure ===");
-                listener.onError();
+                listener.onFail(throwable.toString());
             }
         });
     }

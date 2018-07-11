@@ -10,6 +10,4 @@ import com.mtq.zqymvp.business.joke.bean.Joke;
 public interface IJokeView extends IBaseView {
 
     void onSuccess(Joke joke);
-
-    void onError();
 }

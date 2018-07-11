@@ -42,13 +42,10 @@ dependencies {
     // Android 工具类库
     compile 'com.blankj:utilcode:1.13.4'
 
-    compile 'com.google.code.gson:gson:2.6.2'
-
-    // 用Gson解析json的转换器
-    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
-
     // Retrofit库
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    // 用Gson解析json的转换器
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
 
 }

@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.mtq.zqymvp.base.BaseActivity;
 import com.mtq.zqymvp.business.joke.view.JokeActivity;
 import com.mtq.zqymvp.business.login.view.LoginActivity;
+import com.mtq.zqymvp.business.weather.view.WeatherActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -41,7 +42,7 @@ public class MainActivity extends BaseActivity {
         return false;
     }
 
-    @OnClick({R.id.btn_login, R.id.btn_joke})
+    @OnClick({R.id.btn_login, R.id.btn_joke, R.id.btn_weather})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_login: {
@@ -51,6 +52,11 @@ public class MainActivity extends BaseActivity {
             }
             case R.id.btn_joke: {
                 Intent intent = new Intent(this, JokeActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_weather: {
+                Intent intent = new Intent(this, WeatherActivity.class);
                 startActivity(intent);
                 break;
             }

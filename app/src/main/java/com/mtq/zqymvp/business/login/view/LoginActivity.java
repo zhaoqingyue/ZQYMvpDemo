@@ -69,13 +69,8 @@ public class LoginActivity extends BaseActivity implements ILoginView {
     }
 
     @Override
-    public void onUserNameError() {
-        Toast.makeText(this,"用户名不能为空！",Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onPasswordError() {
-        Toast.makeText(this,"密码不能为空！",Toast.LENGTH_SHORT).show();
+    public void onFail(String msg) {
+        Toast.makeText(this, msg,Toast.LENGTH_SHORT).show();
     }
 
     @Override

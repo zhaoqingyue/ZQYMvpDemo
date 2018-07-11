@@ -32,26 +32,18 @@ public class LoginPresenterImpl implements ILoginPresenter, OnLoginListener {
     }
 
     @Override
-    public void onUserNameError() {
-        if (mILoginView != null) {
-            mILoginView.onUserNameError();
-            mILoginView.hideProgress();
-        }
-    }
-
-    @Override
-    public void onPasswordError() {
-        if (mILoginView != null) {
-            mILoginView.onPasswordError();
-            mILoginView.hideProgress();
-        }
-    }
-
-    @Override
     public void onSuccess() {
         if (mILoginView != null) {
-            mILoginView.onSuccess();
             mILoginView.hideProgress();
+            mILoginView.onSuccess();
+        }
+    }
+
+    @Override
+    public void onFail(String msg) {
+        if (mILoginView != null) {
+            mILoginView.hideProgress();
+            mILoginView.onFail(msg);
         }
     }
 }

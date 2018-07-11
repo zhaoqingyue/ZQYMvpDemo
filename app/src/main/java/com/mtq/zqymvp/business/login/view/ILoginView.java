@@ -8,9 +8,5 @@ import com.mtq.zqymvp.base.IBaseView;
 
 public interface ILoginView extends IBaseView {
 
-    void onUserNameError();
-
-    void onPasswordError();
-
     void onSuccess();
 }

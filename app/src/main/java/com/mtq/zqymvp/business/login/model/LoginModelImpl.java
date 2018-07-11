@@ -19,9 +19,9 @@ public class LoginModelImpl implements ILoginModel {
             @Override
             public void run() {
                 if (TextUtils.isEmpty(username)){
-                    listener.onUserNameError();
+                    listener.onFail("用户名不能为空！");
                 } else if (TextUtils.isEmpty(password)){
-                    listener.onPasswordError();
+                    listener.onFail("密码不能为空！");
                 } else {
                     listener.onSuccess();
                 }
