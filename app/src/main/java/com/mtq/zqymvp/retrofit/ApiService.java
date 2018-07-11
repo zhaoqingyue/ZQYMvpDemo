@@ -10,7 +10,7 @@ import retrofit2.http.Query;
  * Created by zhaoqy on 2018/7/9.
  */
 
-public interface Api {
+public interface ApiService {
 
     // public static final String REQUEST_SERVER_URL ="http://api.jisuapi.com/xiaohua/";
     // public static final String APPKEY ="9814b57c706d0a23";

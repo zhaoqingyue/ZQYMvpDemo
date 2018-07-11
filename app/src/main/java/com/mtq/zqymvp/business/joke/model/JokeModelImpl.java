@@ -3,7 +3,7 @@ package com.mtq.zqymvp.business.joke.model;
 import com.blankj.utilcode.util.LogUtils;
 import com.mtq.zqymvp.business.joke.bean.Joke;
 import com.mtq.zqymvp.business.joke.presenter.OnJokeListener;
-import com.mtq.zqymvp.retrofit.Api;
+import com.mtq.zqymvp.retrofit.ApiService;
 import com.mtq.zqymvp.retrofit.ApiClient;
 
 import retrofit2.Call;
@@ -24,7 +24,7 @@ public class JokeModelImpl implements IJokeModel {
     @Override
     public void getJokeList(String pageNum, String pageSize, final OnJokeListener listener) {
         Retrofit retrofit = ApiClient.retrofit(JOKE_SERVER_URL);
-        Api request = retrofit.create(Api.class);
+        ApiService request = retrofit.create(ApiService.class);
         Call<Joke> call = request.getJokeList(pageNum, pageSize, SORT, APPKEY);
         call.enqueue(new Callback<Joke>() {
 
