@@ -12,7 +12,6 @@ import com.mtq.zqymvp.business.joke.view.IJokeView;
 public class JokePresenterImpl implements IJokePresenter, OnJokeListener {
 
     private IJokeView mIJokeView;
-
     private IJokeModel mIJokeModel;
 
     public JokePresenterImpl(IJokeView jokeView) {
